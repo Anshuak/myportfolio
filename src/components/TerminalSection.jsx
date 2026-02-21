@@ -165,7 +165,6 @@ const TerminalSection = () => {
                                         onKeyDown={handleCommand}
                                         className={`flex-1 bg-transparent outline-none caretb-blink ${theme === 'dark' ? 'text-white' : 'text-black'}`}
                                         spellCheck="false"
-                                        autoFocus
                                     />
                                 </div>
                             </>

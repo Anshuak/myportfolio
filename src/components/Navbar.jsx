@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 
-const sections = ['hero', 'about', 'skills', 'projects', 'coding', 'certifications', 'gaming', 'terminal', 'contact'];
+const sections = ['hero', 'about', 'skills', 'timeline', 'projects', 'coding', 'certifications', 'gaming', 'terminal', 'contact'];
 
 const Navbar = () => {
   const { theme } = useContext(ThemeContext);

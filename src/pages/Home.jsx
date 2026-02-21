@@ -8,6 +8,7 @@ import Contact from '../components/Contact';
 import CodingProfiles from '../components/CodingProfiles';
 import Certifications from '../components/Certifications/Certifications';
 import TerminalSection from '../components/TerminalSection';
+import TimelineSection from '../components/TimelineSection';
 
 const Home = () => {
   return (
@@ -20,6 +21,9 @@ const Home = () => {
       </div>
       <div id="skills">
         <Skills />
+      </div>
+      <div id="timeline">
+        <TimelineSection />
       </div>
       <div id="projects">
         <Projects />
