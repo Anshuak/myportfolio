@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { certificationsData } from '../../data/certifications';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const Certifications = () => {
     const [selectedImage, setSelectedImage] = useState(null);
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <div className="py-20 bg-gray-900 text-white">
+        <div className={`py-20 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-4xl font-bold text-center mb-12 text-cyan-400">
+                <h2 className={`text-4xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600'}`}>
                     Certifications
                 </h2>
 
@@ -15,11 +17,15 @@ const Certifications = () => {
                     {certificationsData.map((cert) => (
                         <div
                             key={cert.id}
-                            className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex flex-col h-full hover:-translate-y-2 overflow-hidden"
+                            className={`p-6 rounded-lg shadow-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-2 overflow-hidden ${theme === 'dark'
+                                ? 'bg-gray-800 hover:shadow-cyan-400/20'
+                                : 'bg-white hover:shadow-cyan-600/20 border border-gray-100'
+                                }`}
                         >
                             {cert.image && (
                                 <div
-                                    className="w-full h-48 mb-6 rounded-md bg-gray-700/50 flex items-center justify-center p-2 cursor-pointer relative group"
+                                    className={`w-full h-48 mb-6 rounded-md flex items-center justify-center p-2 cursor-pointer relative group ${theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-100'
+                                        }`}
                                     onClick={() => setSelectedImage(cert.image)}
                                 >
                                     <img
@@ -32,17 +38,18 @@ const Certifications = () => {
                                     </div>
                                 </div>
                             )}
-                            <h3 className="text-2xl font-semibold mb-2 text-cyan-300">{cert.title}</h3>
-                            <p className="text-gray-400 mb-2 font-medium">{cert.issuer}</p>
-                            <p className="text-gray-500 text-sm mb-4">{cert.date}</p>
-                            <p className="text-gray-300 flex-grow mb-6">{cert.description}</p>
+                            <h3 className={`text-2xl font-semibold mb-2 ${theme === 'dark' ? 'text-cyan-300' : 'text-cyan-700'}`}>{cert.title}</h3>
+                            <p className={`mb-2 font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{cert.issuer}</p>
+                            <p className={`text-sm mb-4 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'}`}>{cert.date}</p>
+                            <p className={`flex-grow mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{cert.description}</p>
 
                             {cert.link !== '#' && (
                                 <a
                                     href={cert.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-block mt-auto text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
+                                    className={`inline-block mt-auto font-medium transition-colors ${theme === 'dark' ? 'text-cyan-400 hover:text-cyan-300' : 'text-cyan-600 hover:text-cyan-500'
+                                        }`}
                                 >
                                     View Credential &rarr;
                                 </a>
