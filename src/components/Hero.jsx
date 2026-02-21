@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { Typewriter, Cursor } from 'react-simple-typewriter';
 import MagneticButton from './MagneticButton';
-import ParallaxShape from './ParallaxShape';
 import profileImage from '../assets/images/IMG_4990.jpg';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -15,19 +14,6 @@ const Hero = () => {
       <div className={`absolute inset-0 -z-10 ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 via-black to-purple-900/50' : 'bg-gradient-to-br from-gray-100 via-white to-purple-100/50'}`}></div>
       {/* Particle/glow animation placeholder */}
       <div className="absolute inset-0 bg-[url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/images/background.jpg')] bg-cover bg-center opacity-5 -z-10"></div>
-
-      {/* Floating Parallax Shapes */}
-      <ParallaxShape className="top-[15%] left-[5%] md:left-[10%]" yOffset={[-200, 200]}>
-        <div className="w-20 h-20 border-4 border-purple-500/40 rounded-full"></div>
-      </ParallaxShape>
-      <ParallaxShape className="top-[40%] right-[5%] md:right-[15%]" yOffset={[200, -200]}>
-        <div className="w-16 h-16 border-4 border-cyan-500/40 transform rotate-45"></div>
-      </ParallaxShape>
-      <ParallaxShape className="bottom-[15%] left-[20%]" yOffset={[-100, 300]}>
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className={`transform rotate-12 ${theme === 'dark' ? 'text-yellow-500/30' : 'text-yellow-600/30'}`}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-        </svg>
-      </ParallaxShape>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 items-center">
