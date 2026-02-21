@@ -44,43 +44,43 @@ const Hero = () => {
               <span>{text}</span>
               <Cursor cursorColor='#F7AB0A' />
             </motion.p>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <Link to="projects" smooth={true} duration={500} offset={-80}>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 items-center">
+              <Link to="projects" smooth={true} duration={500} offset={-80} className="w-full sm:w-auto text-center">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(56, 189, 248)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-cyan-500 text-black font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-cyan-400"
+                  className="w-full sm:w-auto bg-cyan-500 text-black font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-cyan-400"
                 >
                   View Projects
                 </motion.button>
               </Link>
-              <a href="/resume.pdf" download>
+              <a href="/resume.pdf" download className="w-full sm:w-auto text-center">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(255, 255, 255)" }}
                   whileTap={{ scale: 0.95 }}
-                  className={`border-2 border-white-500 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-white-500 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+                  className={`w-full sm:w-auto border-2 border-white-500 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-white-500 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
                 >
                   Download Resume
                 </motion.button>
               </a>
-              <Link to="contact" smooth={true} duration={500} offset={-80}>
+              <Link to="contact" smooth={true} duration={500} offset={-80} className="w-full sm:w-auto text-center">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(168, 85, 247)" }}
                   whileTap={{ scale: 0.95 }}
-                  className={`border-2 border-purple-500 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-purple-500 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+                  className={`w-full sm:w-auto border-2 border-purple-500 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-purple-500 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
                 >
                   Contact Me
                 </motion.button>
               </Link>
             </div>
           </motion.div>
-          <motion.div 
-            className="hidden md:block"
+          <motion.div
+            className="hidden md:flex justify-center items-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <img src={profileImage} alt="Anshu Kailash" className="rounded-full object-cover w-[500px] h-[500px]" />
+            <img src={profileImage} alt="Anshu Kailash" className="rounded-full object-cover w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] shadow-2xl" />
           </motion.div>
         </div>
       </div>

@@ -56,8 +56,8 @@ const Navbar = () => {
                     spy={true}
                     offset={-80}
                     className={`capitalize cursor-pointer transition-colors duration-300 ${activeSection === section
-                        ? 'text-cyan-400'
-                        : 'hover:text-cyan-300'
+                      ? 'text-cyan-400'
+                      : 'hover:text-cyan-300'
                       }`}
                   >
                     {section}
@@ -74,15 +74,15 @@ const Navbar = () => {
             </a>
             <ThemeToggle />
           </div>
-          <div onClick={() => setNav(!nav)} className="md:hidden cursor-pointer z-10">
-            {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+          <div onClick={() => setNav(!nav)} className="md:hidden cursor-pointer z-[110]">
+            {nav ? <FaTimes size={30} className={nav ? 'text-white' : ''} /> : <FaBars size={30} />}
           </div>
         </div>
       </div>
 
       {nav && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-black/90 flex flex-col justify-center items-center md:hidden">
-          <ul className="space-y-8">
+        <div className="fixed inset-0 w-full h-screen bg-black/95 flex flex-col justify-center items-center md:hidden z-[100] overflow-y-auto py-10">
+          <ul className="space-y-6 md:space-y-8 flex flex-col items-center justify-center">
             {sections.map((section) => (
               <li key={section}>
                 <Link
@@ -92,7 +92,7 @@ const Navbar = () => {
                   duration={500}
                   spy={true}
                   offset={-80}
-                  className="text-4xl capitalize cursor-pointer hover:text-cyan-300"
+                  className="text-3xl capitalize cursor-pointer hover:text-cyan-300 text-white"
                 >
                   {section}
                 </Link>
@@ -102,7 +102,8 @@ const Navbar = () => {
               <a
                 href="/resume.pdf"
                 download
-                className="text-4xl capitalize cursor-pointer hover:text-cyan-300"
+                onClick={() => setNav(false)}
+                className="text-3xl capitalize cursor-pointer hover:text-cyan-300 text-white"
               >
                 Resume
               </a>
