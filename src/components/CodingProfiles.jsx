@@ -47,18 +47,17 @@ const CodingProfiles = () => {
         >
           Coding Profiles
         </motion.h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-8 mb-16">
           {codingProfiles.map((profile, index) => (
             <motion.a
               key={index}
               href={profile.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center space-x-4 p-6 rounded-lg shadow-lg transition-all duration-300 ${
-                theme === 'dark'
+              className={`flex items-center space-x-4 p-6 rounded-lg shadow-lg transition-all duration-300 ${theme === 'dark'
                   ? 'bg-gray-800/50 hover:bg-gray-700/50'
                   : 'bg-gray-100/50 hover:bg-gray-200/50'
-              }`}
+                }`}
               whileHover={{ scale: 1.05, boxShadow: `0px 0px 12px ${theme === 'dark' ? 'rgba(56, 189, 248, 0.5)' : 'rgba(14, 165, 233, 0.5)'}` }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}

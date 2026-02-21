@@ -6,6 +6,7 @@ import Projects from '../components/Projects';
 import GamingSection from '../components/GamingSection';
 import Contact from '../components/Contact';
 import CodingProfiles from '../components/CodingProfiles';
+import Certifications from '../components/Certifications/Certifications';
 
 const Home = () => {
   return (
@@ -24,6 +25,9 @@ const Home = () => {
       </div>
       <div id="coding">
         <CodingProfiles />
+      </div>
+      <div id="certifications">
+        <Certifications />
       </div>
       <div id="gaming">
         <GamingSection />

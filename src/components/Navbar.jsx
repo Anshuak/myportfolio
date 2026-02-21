@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
 
-const sections = ['hero', 'about', 'skills', 'projects', 'coding', 'gaming', 'contact'];
+const sections = ['hero', 'about', 'skills', 'projects', 'coding', 'certifications', 'gaming', 'contact'];
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -37,9 +37,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -56,11 +55,10 @@ const Navbar = () => {
                     duration={500}
                     spy={true}
                     offset={-80}
-                    className={`capitalize cursor-pointer transition-colors duration-300 ${
-                      activeSection === section
+                    className={`capitalize cursor-pointer transition-colors duration-300 ${activeSection === section
                         ? 'text-cyan-400'
                         : 'hover:text-cyan-300'
-                    }`}
+                      }`}
                   >
                     {section}
                   </Link>
