@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HangingBulb from './components/HangingBulb';
 import ScrollProgressBar from './components/ScrollProgressBar';
+import ScrollToTop from './components/ScrollToTop';
 import { ThemeContext } from './context/ThemeContext';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
