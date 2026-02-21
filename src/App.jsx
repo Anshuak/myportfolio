@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import HangingBulb from './components/HangingBulb';
 import { ThemeContext } from './context/ThemeContext';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className={`${theme === 'dark' ? 'bg-[#0f0f0f] text-white' : 'bg-white text-black'}`}>
+      <HangingBulb />
       <Navbar />
       <main>
         <Routes>
