@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaYoutube, FaCheckCircle, FaTimes } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [showToast, setShowToast] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,8 +16,15 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission logic (e.g., send to an API endpoint)
     console.log(formData);
-    alert('Form submitted! (Check console for data)');
+
+    // Show toast and reset form
+    setShowToast(true);
     setFormData({ name: '', email: '', message: '' });
+
+    // Auto-hide toast after 3 seconds
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
   };
 
   return (
@@ -85,9 +93,9 @@ const Contact = () => {
             </div>
           </motion.form>
           <div className="flex justify-center space-x-6 mt-12">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaGithub size={32}/></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaLinkedin size={32}/></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-red-500' : 'text-gray-600 hover:text-red-600'} transition-colors`}><FaYoutube size={32}/></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaGithub size={32} /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaLinkedin size={32} /></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-red-500' : 'text-gray-600 hover:text-red-600'} transition-colors`}><FaYoutube size={32} /></a>
           </div>
           <div className="text-center mt-8">
             <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -96,6 +104,35 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Toast Notification positioned at bottom right */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, x: 50, y: 50 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            exit={{ opacity: 0, x: 50, y: 50, transition: { duration: 0.2 } }}
+            className={`fixed bottom-8 right-8 z-[100] flex items-center space-x-3 px-6 py-4 rounded-lg shadow-2xl border ${theme === 'dark'
+                ? 'bg-gray-800 border-gray-700 text-white shadow-cyan-500/10'
+                : 'bg-white border-gray-200 text-black shadow-cyan-500/20'
+              }`}
+          >
+            <FaCheckCircle className="text-cyan-500 text-2xl" />
+            <div>
+              <p className="font-semibold text-sm">Message Sent Successfully! 🚀</p>
+              <p className={`text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                I'll get back to you soon.
+              </p>
+            </div>
+            <button
+              onClick={() => setShowToast(false)}
+              className={`ml-4 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-400 hover:text-black'} transition-colors`}
+            >
+              <FaTimes />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
