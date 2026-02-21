@@ -7,6 +7,7 @@ import GamingSection from '../components/GamingSection';
 import Contact from '../components/Contact';
 import CodingProfiles from '../components/CodingProfiles';
 import Certifications from '../components/Certifications/Certifications';
+import TerminalSection from '../components/TerminalSection';
 
 const Home = () => {
   return (
@@ -31,6 +32,9 @@ const Home = () => {
       </div>
       <div id="gaming">
         <GamingSection />
+      </div>
+      <div id="terminal">
+        <TerminalSection />
       </div>
       <div id="contact">
         <Contact />
