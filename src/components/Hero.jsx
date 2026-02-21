@@ -1,17 +1,12 @@
 import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { Typewriter, Cursor } from 'react-simple-typewriter';
 import profileImage from '../assets/images/IMG_4990.jpg';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Hero = () => {
   const { theme } = useContext(ThemeContext);
-  const [text] = useTypewriter({
-    words: ['Software Engineer', 'AI Enthusiast', 'Gamer'],
-    loop: true,
-    delaySpeed: 2000,
-  });
 
   return (
     <div className={`relative min-h-screen flex items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
@@ -27,8 +22,20 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="z-10 text-center md:text-left"
           >
+            <motion.div
+              className={`text-xl md:text-2xl font-medium mb-2 h-[1.5em] ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <Typewriter
+                words={['अंशु कैलाश', 'অংশু কৈলাশ', 'アンシュ・カイラッシュ']}
+                loop={true}
+                delaySpeed={2500}
+              />
+            </motion.div>
             <motion.h1
-              className={`text-5xl md:text-8xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+              className={`text-5xl md:text-8xl font-bold mb-4 min-h-[1em] ${theme === 'dark' ? 'text-white' : 'text-black'}`}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -41,7 +48,13 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              <span>{text}</span>
+              <span>
+                <Typewriter
+                  words={['Software Engineer', 'AI Enthusiast', 'Gamer']}
+                  loop={true}
+                  delaySpeed={2000}
+                />
+              </span>
               <Cursor cursorColor='#F7AB0A' />
             </motion.p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 items-center">
