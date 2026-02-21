@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaYoutube, FaCheckCircle, FaTimes } from 'react-icons/fa';
+import MagneticButton from './MagneticButton';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Contact = () => {
@@ -82,14 +83,14 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="text-center">
-              <motion.button
+              <MagneticButton
                 type="submit"
                 whileHover={{ scale: 1.05, boxShadow: '0px 0px 8px rgb(56, 189, 248)' }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-cyan-500 text-black font-bold py-3 px-12 rounded-full transition-colors duration-300 hover:bg-cyan-400"
               >
                 Send Message
-              </motion.button>
+              </MagneticButton>
             </div>
           </motion.form>
           <div className="flex justify-center space-x-6 mt-12">
@@ -113,8 +114,8 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0, y: 0 }}
             exit={{ opacity: 0, x: 50, y: 50, transition: { duration: 0.2 } }}
             className={`fixed bottom-8 right-8 z-[100] flex items-center space-x-3 px-6 py-4 rounded-lg shadow-2xl border ${theme === 'dark'
-                ? 'bg-gray-800 border-gray-700 text-white shadow-cyan-500/10'
-                : 'bg-white border-gray-200 text-black shadow-cyan-500/20'
+              ? 'bg-gray-800 border-gray-700 text-white shadow-cyan-500/10'
+              : 'bg-white border-gray-200 text-black shadow-cyan-500/20'
               }`}
           >
             <FaCheckCircle className="text-cyan-500 text-2xl" />

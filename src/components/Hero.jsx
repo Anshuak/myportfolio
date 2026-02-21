@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { Typewriter, Cursor } from 'react-simple-typewriter';
+import MagneticButton from './MagneticButton';
+import ParallaxShape from './ParallaxShape';
 import profileImage from '../assets/images/IMG_4990.jpg';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -13,6 +15,19 @@ const Hero = () => {
       <div className={`absolute inset-0 -z-10 ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 via-black to-purple-900/50' : 'bg-gradient-to-br from-gray-100 via-white to-purple-100/50'}`}></div>
       {/* Particle/glow animation placeholder */}
       <div className="absolute inset-0 bg-[url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/images/background.jpg')] bg-cover bg-center opacity-5 -z-10"></div>
+
+      {/* Floating Parallax Shapes */}
+      <ParallaxShape className="top-[15%] left-[5%] md:left-[10%]" yOffset={[-200, 200]}>
+        <div className="w-20 h-20 border-4 border-purple-500/40 rounded-full"></div>
+      </ParallaxShape>
+      <ParallaxShape className="top-[40%] right-[5%] md:right-[15%]" yOffset={[200, -200]}>
+        <div className="w-16 h-16 border-4 border-cyan-500/40 transform rotate-45"></div>
+      </ParallaxShape>
+      <ParallaxShape className="bottom-[15%] left-[20%]" yOffset={[-100, 300]}>
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className={`transform rotate-12 ${theme === 'dark' ? 'text-yellow-500/30' : 'text-yellow-600/30'}`}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+      </ParallaxShape>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -59,31 +74,31 @@ const Hero = () => {
             </motion.p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 items-center">
               <Link to="projects" smooth={true} duration={500} offset={-80} className="w-full sm:w-auto text-center">
-                <motion.button
+                <MagneticButton
                   whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(56, 189, 248)" }}
                   whileTap={{ scale: 0.95 }}
                   className="w-full sm:w-auto bg-cyan-500 text-black font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-cyan-400"
                 >
                   View Projects
-                </motion.button>
+                </MagneticButton>
               </Link>
               <a href="/resume.pdf" download className="w-full sm:w-auto text-center">
-                <motion.button
+                <MagneticButton
                   whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(255, 255, 255)" }}
                   whileTap={{ scale: 0.95 }}
                   className={`w-full sm:w-auto border-2 border-white-500 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-white-500 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
                 >
                   Download Resume
-                </motion.button>
+                </MagneticButton>
               </a>
               <Link to="contact" smooth={true} duration={500} offset={-80} className="w-full sm:w-auto text-center">
-                <motion.button
+                <MagneticButton
                   whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(168, 85, 247)" }}
                   whileTap={{ scale: 0.95 }}
                   className={`w-full sm:w-auto border-2 border-purple-500 font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-purple-500 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
                 >
                   Contact Me
-                </motion.button>
+                </MagneticButton>
               </Link>
             </div>
           </motion.div>
