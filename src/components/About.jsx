@@ -37,7 +37,7 @@ const About = () => {
           About Me
         </motion.h2>
         <div className="flex flex-col md:flex-row items-center gap-12">
-          <motion.div
+          <motion.figure
             className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden flex-shrink-0"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -49,7 +49,7 @@ const About = () => {
               alt="Profile"
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </motion.figure>
           <motion.div
             className={`text-lg text-center md:text-left ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
             initial={{ x: 100, opacity: 0 }}
@@ -77,13 +77,13 @@ const About = () => {
             transition={{ staggerChildren: 0.2 }}
           >
             {highlightedSkills.map((skill) => (
-              <motion.div
+              <motion.article
                 key={skill}
                 className={`p-6 rounded-lg backdrop-blur-sm border ${theme === 'dark' ? 'bg-gray-800/50 border-gray-700' : 'bg-gray-100/50 border-gray-200'}`}
                 variants={cardVariants}
               >
                 <h4 className="text-xl font-semibold">{skill}</h4>
-              </motion.div>
+              </motion.article>
             ))}
           </motion.div>
         </div>

@@ -10,7 +10,7 @@ const Hero = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`relative min-h-screen flex items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+    <header className={`relative min-h-screen flex items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <div className={`absolute inset-0 -z-10 ${theme === 'dark' ? 'bg-gradient-to-br from-gray-900 via-black to-purple-900/50' : 'bg-gradient-to-br from-gray-100 via-white to-purple-100/50'}`}></div>
       {/* Particle/glow animation placeholder */}
       <div className="absolute inset-0 bg-[url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/images/background.jpg')] bg-cover bg-center opacity-5 -z-10"></div>
@@ -98,7 +98,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

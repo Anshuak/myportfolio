@@ -7,7 +7,7 @@ const Certifications = () => {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={`py-20 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+        <section className={`py-20 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className={`text-4xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600'}`}>
                     Certifications
@@ -15,7 +15,7 @@ const Certifications = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {certificationsData.map((cert) => (
-                        <div
+                        <article
                             key={cert.id}
                             className={`p-6 rounded-lg shadow-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-2 overflow-hidden ${theme === 'dark'
                                 ? 'bg-gray-800 hover:shadow-cyan-400/20'
@@ -54,7 +54,7 @@ const Certifications = () => {
                                     View Credential &rarr;
                                 </a>
                             )}
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
@@ -84,7 +84,7 @@ const Certifications = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </section>
     );
 };
 

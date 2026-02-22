@@ -55,7 +55,7 @@ const TimelineSection = () => {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <section className={`py-20 relative ${theme === 'dark' ? 'bg-gray-900/40' : 'bg-gray-50'}`} id="timeline">
+        <section className={`py-20 relative ${theme === 'dark' ? 'bg-gray-900/40' : 'bg-gray-50'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.h2
                     className={`text-4xl font-bold text-center mb-16 ${theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600'}`}
@@ -75,7 +75,7 @@ const TimelineSection = () => {
                         {timelineData.map((item, index) => {
                             const isEven = index % 2 === 0;
                             return (
-                                <motion.div
+                                <motion.article
                                     key={item.id}
                                     className={`relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''}`}
                                     initial={{ opacity: 0, y: 50 }}
@@ -107,7 +107,7 @@ const TimelineSection = () => {
                                             </p>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </motion.article>
                             );
                         })}
                     </div>

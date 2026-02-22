@@ -43,14 +43,14 @@ const Projects = () => {
           transition={{ staggerChildren: 0.3 }}
         >
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={index}
               className="group relative block"
               variants={cardVariants}
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <div className={`relative h-full rounded-lg p-6 flex flex-col justify-between ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'}`}>
-                <div>
+                <header>
                   <h3 className={`text-2xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{project.title}</h3>
                   <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} mb-4`}>{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -63,8 +63,8 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                </div>
-                <div className="flex items-center justify-end space-x-4 mt-4">
+                </header>
+                <footer className="flex items-center justify-end space-x-4 mt-4">
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -81,9 +81,9 @@ const Projects = () => {
                   >
                     <FaExternalLinkAlt size={22} />
                   </a>
-                </div>
+                </footer>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>

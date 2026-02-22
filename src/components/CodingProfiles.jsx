@@ -36,7 +36,7 @@ const CodingProfiles = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section id="coding" className={`py-20 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+    <section className={`py-20 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
           className={`text-4xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600'}`}
@@ -55,8 +55,8 @@ const CodingProfiles = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center space-x-4 p-6 rounded-lg shadow-lg transition-all duration-300 ${theme === 'dark'
-                  ? 'bg-gray-800/50 hover:bg-gray-700/50'
-                  : 'bg-gray-100/50 hover:bg-gray-200/50'
+                ? 'bg-gray-800/50 hover:bg-gray-700/50'
+                : 'bg-gray-100/50 hover:bg-gray-200/50'
                 }`}
               whileHover={{ scale: 1.05, boxShadow: `0px 0px 12px ${theme === 'dark' ? 'rgba(56, 189, 248, 0.5)' : 'rgba(14, 165, 233, 0.5)'}` }}
               initial={{ opacity: 0, y: 50 }}

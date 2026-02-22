@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <section className={`py-20 ${theme === 'dark' ? 'bg-gray-900/20' : 'bg-gray-50/50'}`} id="peers">
+        <section className={`py-20 ${theme === 'dark' ? 'bg-gray-900/20' : 'bg-gray-50/50'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.h2
                     className={`text-4xl font-bold text-center mb-4 ${theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600'}`}
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {peersData.map((peer, index) => (
-                            <motion.div
+                            <motion.article
                                 key={peer.id}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
@@ -106,7 +106,7 @@ const TestimonialsSection = () => {
                                         <FaLinkedin />
                                     </a>
                                 )}
-                            </motion.div>
+                            </motion.article>
                         ))}
                     </div>
                 </div>

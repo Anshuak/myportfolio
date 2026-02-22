@@ -63,7 +63,7 @@ const Skills = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <section id="skills" className="py-20">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <h2 className={`text-4xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
           My Skills
@@ -72,18 +72,16 @@ const Skills = () => {
           {Object.entries(skills).map(([category, skillList]) => (
             <motion.div
               key={category}
-              className={`p-6 rounded-lg backdrop-blur-sm border ${
-                theme === 'dark' ? 'bg-gray-800/50 border-gray-700' : 'bg-white border-gray-200'
-              }`}
+              className={`p-6 rounded-lg backdrop-blur-sm border ${theme === 'dark' ? 'bg-gray-800/50 border-gray-700' : 'bg-white border-gray-200'
+                }`}
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
               <h3
-                className={`text-2xl font-bold mb-6 capitalize ${
-                  theme === 'dark' ? 'text-purple-400' : 'text-purple-600'
-                }`}
+                className={`text-2xl font-bold mb-6 capitalize ${theme === 'dark' ? 'text-purple-400' : 'text-purple-600'
+                  }`}
               >
                 {category}
               </h3>
