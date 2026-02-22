@@ -94,8 +94,8 @@ const Contact = () => {
             </div>
           </motion.form>
           <div className="flex justify-center space-x-6 mt-12">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaGithub size={32} /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaLinkedin size={32} /></a>
+            <a href="https://github.com/Anshuak" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaGithub size={32} /></a>
+            <a href="https://www.linkedin.com/in/anshukailash/" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-cyan-400' : 'text-gray-600 hover:text-cyan-600'} transition-colors`}><FaLinkedin size={32} /></a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={`${theme === 'dark' ? 'text-gray-400 hover:text-red-500' : 'text-gray-600 hover:text-red-600'} transition-colors`}><FaYoutube size={32} /></a>
           </div>
           <div className="text-center mt-8">
